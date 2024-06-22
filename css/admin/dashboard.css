@@ -1,5 +1,21 @@
-button{
-    padding: 100px;
+#go{
+    color: #00B9E6;
+    background-color: white;
+    border: 1px solid #00B9E6;
+    width: 200px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+#go:hover{
+    transition: 0.5s;
+    color: white;
+    background-color: #00B9E6;
+}
+
+#logout{
     background-color: #00666F;
     border: none;
 }
