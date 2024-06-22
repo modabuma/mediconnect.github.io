@@ -1,0 +1,26 @@
+
+body {
+    background-color: #f0f8ff; /* Light blue background */
+    height: 100vh;
+}
+.login-container {
+    background-color: #ffffff; /* White background */
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    border-radius: 15px;
+}
+.login-container h2 {
+    margin-bottom: 1rem;
+    color: #007bff; /* Bootstrap primary color */
+}
+.btn-custom {
+    background-color: #007bff; /* Bootstrap primary color */
+    color: white;
+}
+.btn-custom:hover {
+    background-color: #0056b3;
+    color: white;
+}
