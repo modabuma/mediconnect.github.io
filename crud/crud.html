@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Citas Médicas</title>
+    <link rel="stylesheet" href="../../css/admin/dashboard.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        #go{
+            color: #00B9E6;
+            background-color: white;
+            border: 1px solid #00B9E6;
+            width: 200px;
+            padding-left: 30px;
+            padding-right: 30px;
+            border-radius: 10px;
+            text-decoration: none;
+        }
+
+        #go:hover{
+            transition: 0.5s;
+            color: white;
+            background-color: #00B9E6;
+        }
+
+        #logout{
+            background-color: #00666F;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #00666F;">
+        <a class="navbar-brand" href="#">Dashboard</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Información</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" style="color: white;">Revisar citas</a>
+                </li>
+                <li class="nav-item">
+                    <button id="logout" class="nav-link" style="color: white; border-radius: 10px;" onclick="logout()">Cerrar sesión</button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container welcome-message">
+        <h2 id="title" style="margin-top: 50px">Gestión de Citas Médicas</h2>
+    </div>
+
+    <div class="container" style="margin-top: 30px">
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Paciente</th>
+                        <th>Fecha</th>
+                        <th>Hora</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Aquí se agregarán dinámicamente las filas de citas -->
+                </tbody>
+            </table>
+        </div>
+        
+        <!-- Paginación -->
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+                <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1">Anterior</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#">Siguiente</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <script src="../../js/auth/logout.js"></script>
+    <script src="../../js/admin/dashboard.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Ejemplo de datos de citas (pueden venir de una base de datos)
+        const citas = [
+            { id: 1, paciente: 'Juan Pérez', fecha: '2024-07-01', hora: '10:00' },
+            { id: 2, paciente: 'Ana García', fecha: '2024-07-02', hora: '11:00' },
+            { id: 3, paciente: 'Luis Martínez', fecha: '2024-07-03', hora: '12:00' },
+        ];
+
+        // Función para renderizar las citas en la tabla
+        function renderCitas() {
+            const tbody = document.querySelector('table tbody');
+            tbody.innerHTML = '';
+            citas.forEach(cita => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>${cita.id}</td>
+                    <td>${cita.paciente}</td>
+                    <td>${cita.fecha}</td>
+                    <td>${cita.hora}</td>
+                    <td>
+                        <button class="btn btn-primary btn-sm" onclick="actualizarCita(${cita.id})">Actualizar</button>
+                        <button class="btn btn-danger btn-sm" onclick="eliminarCita(${cita.id})">Eliminar</button>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        // Función para actualizar una cita
+        function actualizarCita(id) {
+            alert(`Actualizar cita con ID: ${id}`);
+            // Aquí puedes agregar la lógica para actualizar una cita
+        }
+
+        // Función para eliminar una cita
+        function eliminarCita(id) {
+            const index = citas.findIndex(cita => cita.id === id);
+            if (index !== -1) {
+                citas.splice(index, 1);
+                renderCitas();
+            }
+        }
+
+        // Renderizar las citas al cargar la página
+        document.addEventListener('DOMContentLoaded', renderCitas);
+    </script>
+</body>
+</html>
