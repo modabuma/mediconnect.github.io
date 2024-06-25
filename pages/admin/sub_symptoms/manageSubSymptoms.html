@@ -22,10 +22,10 @@
                     <a class="nav-link" href="../patient/manageUsers.html">Usuarios</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./manageSymptoms.html" style="color: white;">Síntomas</a>
+                    <a class="nav-link" href="../symptoms/manageSymptoms.html" style="color: white;">Síntomas</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" style="color: white;">Sub síntomas</a>
+                    <a class="nav-link" href="./manageSubSymptoms.html" style="color: white;">Sub síntomas</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#" style="color: white;">Agendar cita</a>
@@ -39,14 +39,14 @@
     </nav>
 
     <div class="container welcome-message">
-        <h2 id="title" style="margin-top: 50px">Gestión de Síntomas</h2>
+        <h2 id="title" style="margin-top: 50px">Gestión de Sub-Síntomas</h2>
     </div>
 
     <div class="container" style="margin-top: 30px">
         <button class="btn btn-secondary" type="button" data-toggle="collapse" data-target="#filterContainer" aria-expanded="false" aria-controls="filterContainer">
             Mostrar/Ocultar Filtros
         </button>
-        <a class="btn btn-success" type="button" style="margin-left: 10px;" href="./createSymptoms.html">
+        <a class="btn btn-success" type="button" style="margin-left: 10px;" href="./createSubSymptoms.html">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-h-circle" viewBox="0 0 16 16">
                 <path d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-5-3.998V12H9.67V8.455H6.33V12H5V4.002h1.33v3.322h3.34V4.002z"/>
             </svg>
@@ -56,11 +56,11 @@
                 <form id="filter-form">
                     <div class="form-row">
                         <div class="form-group col-md-2">
-                            <label for="filter-code-symptom">Código Síntoma</label>
+                            <label for="filter-code-symptom">Código Sub-Síntoma</label>
                             <input type="number" class="form-control" id="filter-code-symptom" placeholder="Código Síntoma">
                         </div>
-                        <div class="form-group col-md-2">
-                            <label for="filter-desc-symptom">Descripción Síntoma</label>
+                        <div class="form-group col-md-3">
+                            <label for="filter-desc-symptom">Descripción Sub-Síntoma</label>
                             <input type="text" class="form-control" id="filter-desc-symptom" placeholder="Síntoma">
                         </div>
                     </div>
@@ -91,8 +91,8 @@
         </nav>
     </div>
 
-    <script src="../../../js/auth/logout.js" defer></script>
-    <script src="../../../js/admin/manageSymptoms.js"></script>
+    <script src="../../../js/auth/logout.js"></script>
+    <script src="../../../js/admin/manageSubSymptoms.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>

@@ -19,3 +19,7 @@
     background-color: #00666F;
     border: none;
 }
+
+.form-group.col-md-3{
+    width: 20px;
+}

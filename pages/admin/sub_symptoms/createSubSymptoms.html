@@ -19,10 +19,10 @@
                     <a class="nav-link" href="../patient/manageUsers.html">Usuarios</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./manageSymptoms.html" style="color: white;">Síntomas</a>
+                    <a class="nav-link" href="../symptoms/manageSymptoms.html" style="color: white;">Síntomas</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" style="color: white;">Sub síntomas</a>
+                    <a class="nav-link" href="./manageSubSymptoms.html" style="color: white;">Sub síntomas</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#" style="color: white;">Agendar cita</a>
@@ -35,22 +35,22 @@
     </nav>
 
     <div class="container mt-5">
-        <h2>Crear Síntomas</h2>
+        <h2>Crear Sub-Síntomas</h2>
         <form>
             <div class="form-group">
-                <label for="filter-code-symptom">Código del Síntoma</label>
+                <label for="filter-code-symptom">Código del Sub-Síntoma</label>
                 <input type="number" class="form-control" id="filter-code-symptom" placeholder="Código Síntoma">
             </div>
             <div class="form-group">
-                <label for="filter-desc-symptom">Descripción del Síntoma</label>
+                <label for="filter-desc-symptom">Descripción del Sub-Síntoma</label>
                 <input type="text" class="form-control" id="filter-desc-symptom" placeholder="Síntoma">
             </div>
-            <button type="button" class="btn btn-primary" style="margin-bottom: 30px;" onclick="createUser()">Crear Síntoma</button>
+            <button type="button" class="btn btn-primary" style="margin-bottom: 30px;" onclick="createSubSymptoms()">Crear Sub-Síntoma</button>
         </form>
     </div>
 
     <script src="../../../js/auth/logout.js"></script>
-    <script src="../../../js/admin/createSymptoms.js"></script>
+    <script src="../../../js/admin/createSubSymptoms.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
