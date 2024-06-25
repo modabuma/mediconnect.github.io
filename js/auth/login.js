@@ -1,3 +1,22 @@
+document.addEventListener("DOMContentLoaded", async function(){
+    let session = sessionStorage.getItem("access_token");
+
+    if (session){
+        const [headerB64, payloadB64, signature] = session.split('.');
+        const payload = JSON.parse(atob(payloadB64));
+
+        if (payload.sub.role == "AD"){
+            window.location.href = "../../pages/admin/dashboard.html"; 
+        }
+        else if(payload.sub.role == "DO"){
+            window.location.href = "../../pages/doctor/dashboard.html"; 
+        }
+        else{
+            window.location.href = "../../pages/patient/dashboard.html";
+        }
+    }
+});
+
 async function authenticate() {
     let email = document.getElementById("email").value;
     let password = document.getElementById("password").value;
@@ -42,8 +61,6 @@ async function authenticate() {
             
             const [headerB64, payloadB64, signature] = resp.data.access_token.split('.');
             const payload = JSON.parse(atob(payloadB64));
-
-            console.log('Payload decodificado:', payload.sub.role);
             
             if (payload.sub.role == "AD"){
                 window.location.href = "../../pages/admin/dashboard.html"; 
