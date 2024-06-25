@@ -4,22 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestión de Citas Médicas</title>
-    <link rel="stylesheet" href="../../css/admin/manageUsers.css">
+    <link rel="stylesheet" href="../../../css/admin/dashboard.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
     <!-- <div id="preloader">
         <div class="loader"></div>
-    </div> -->
+    </div>  -->
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #00666F;">
-        <a class="navbar-brand" href="./dashboard.html">Dashboard</a>
+        <a class="navbar-brand" href="../dashboard.html">Dashboard</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="./manageUsers.html">Usuarios</a>
+                    <a class="nav-link" href="../patient/manageUsers.html">Usuarios</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="./manageSymptoms.html" style="color: white;">Síntomas</a>
@@ -57,11 +57,11 @@
                     <div class="form-row">
                         <div class="form-group col-md-2">
                             <label for="filter-code-symptom">Código Síntoma</label>
-                            <input type="text" class="form-control" id="filter-code-symptom" placeholder="Código Síntoma">
+                            <input type="number" class="form-control" id="filter-code-symptom" placeholder="Código Síntoma">
                         </div>
                         <div class="form-group col-md-2">
                             <label for="filter-desc-symptom">Descripción Síntoma</label>
-                            <input type="number" class="form-control" id="filter-desc-symptom" placeholder="Síntoma">
+                            <input type="text" class="form-control" id="filter-desc-symptom" placeholder="Síntoma">
                         </div>
                     </div>
                     <button type="button" class="btn btn-primary" onclick="getDataWithFilters()">Buscar</button>
@@ -91,8 +91,8 @@
         </nav>
     </div>
 
-    <script src="../../js/auth/logout.js" defer></script>
-    <script src="../../js/admin/manageSymptoms.js"></script>
+    <script src="../../../js/auth/logout.js" defer></script>
+    <script src="../../../js/admin/manageSymptoms.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>

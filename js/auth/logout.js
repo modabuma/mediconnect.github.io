@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function(){
     let access_token = sessionStorage.getItem("access_token");
 
     if (access_token == undefined){
-        window.location.href = "../../index.html";
+        window.location.href = "../../../index.html";
     }
 });
 
@@ -28,6 +28,6 @@ async function logout() {
     }
     else{
         sessionStorage.clear();
-        window.location.href = "../../index.html";
+        window.location.href = "../../../index.html";
     }
 }
