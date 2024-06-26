@@ -4,10 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Header Responsivo</title>
-    <link rel="stylesheet" href="../../../css/admin/dashboard.css">
+    <link rel="stylesheet" href="../../../css/header.css">
+    <link rel="stylesheet" href="../../../css/loader.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+    <div id="preloader" style="display:none;">
+        <div class="loader"></div>
+    </div> 
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #00666F;">
         <a class="navbar-brand" href="../dashboard.html">Dashboard</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,19 +42,25 @@
         <h2>Crear Sub-Síntomas</h2>
         <form>
             <div class="form-group">
+                <label for="filter-code-symptom">Síntoma</label>
+                <select class="form-control" id="filter-code-symptom">
+                    <option value="0">Elige una opción</option>
+                </select>
+            </div>
+            <div class="form-group">
                 <label for="filter-code-symptom">Código del Sub-Síntoma</label>
-                <input type="number" class="form-control" id="filter-code-symptom" placeholder="Código Síntoma">
+                <input type="text" class="form-control" id="filter-code-sub-symptom" placeholder="Código Sub-Síntoma">
             </div>
             <div class="form-group">
                 <label for="filter-desc-symptom">Descripción del Sub-Síntoma</label>
-                <input type="text" class="form-control" id="filter-desc-symptom" placeholder="Síntoma">
+                <input type="text" class="form-control" id="filter-desc-sub-symptom" placeholder="Descripción">
             </div>
             <button type="button" class="btn btn-primary" style="margin-bottom: 30px;" onclick="createSubSymptoms()">Crear Sub-Síntoma</button>
         </form>
     </div>
 
     <script src="../../../js/auth/logout.js"></script>
-    <script src="../../../js/admin/createSubSymptoms.js"></script>
+    <script src="../../../js/admin/sub_symptoms/createSubSymptoms.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
