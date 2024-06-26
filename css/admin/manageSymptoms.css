@@ -1,3 +1,4 @@
+
 #go{
     color: #00B9E6;
     background-color: white;
@@ -15,6 +16,7 @@
     background-color: #00B9E6;
 }
 
-.form-group.col-md-3{
-    width: 20px;
+#logout{
+    background-color: #00666F;
+    border: none;
 }
