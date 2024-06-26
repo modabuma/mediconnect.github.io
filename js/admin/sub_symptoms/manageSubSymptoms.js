@@ -152,6 +152,8 @@ async function getDataWithFilters(){
     let preloader = document.getElementById("preloader");
     preloader.style.display="flex";
 
+    let initial_date = document.getElementById("filter-initial-date").value;
+    let final_date = document.getElementById("filter-final-date").value;
     let code_symptom = document.getElementById("filter-code-symptom").value; 
     let code = document.getElementById("filter-code-sub-symptom").value;
     let description = document.getElementById("filter-desc-sub-symptom").value;
@@ -173,6 +175,14 @@ async function getDataWithFilters(){
         filters += "symptom_id="+code_symptom+"&";
     }
 
+    if (initial_date.length > 0){
+        filters += "initial_date="+initial_date+"&";
+    }
+
+    if (final_date.length > 0){
+        filters += "final_date="+final_date+"&";
+    }
+    
     filters += "code="+code+"&";
     filters += "description="+description+"&";
 
@@ -243,11 +253,11 @@ function deleteSubSymptom(id){
     });
 }
 
-async function delete_(id_user){
+async function delete_(id){
     const options = {
         method: "DELETE",
         body: JSON.stringify({
-            id: id_user
+            id: id
         }),
         headers: {
             'Content-Type': 'application/json',
@@ -284,8 +294,8 @@ async function delete_(id_user){
     }
 }
 
-function redirectToUpdateView(id_user){
-    sessionStorage.setItem("id", id_user);
+function redirectToUpdateView(id){
+    sessionStorage.setItem("id", id);
 
     window.location.href = "../../admin/sub_symptoms/updateSubSymptoms.html";
 }

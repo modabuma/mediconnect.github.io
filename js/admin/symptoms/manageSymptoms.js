@@ -140,6 +140,8 @@ async function getDataWithFilters(){
 
     let code = document.getElementById("filter-code-symptom").value;
     let description = document.getElementById("filter-desc-symptom").value;
+    let initial_date = document.getElementById("filter-initial-date").value;
+    let final_date = document.getElementById("filter-final-date").value;
     const records = document.getElementById("records");
     const pages = document.getElementById("pages");
     let html = "";
@@ -153,6 +155,14 @@ async function getDataWithFilters(){
             'Authorization': 'Bearer '+sessionStorage.getItem("access_token")
         }
     };
+
+    if (initial_date.length > 0){
+        filters += "initial_date="+initial_date+"&";
+    }
+
+    if (final_date.length > 0){
+        filters += "final_date="+final_date+"&";
+    }
 
     filters += "code="+code+"&";
     filters += "description="+description+"&";
@@ -223,11 +233,11 @@ function deleteSymptom(id){
     });
 }
 
-async function delete_(id_user){
+async function delete_(id){
     const options = {
         method: "DELETE",
         body: JSON.stringify({
-            id: id_user
+            id: id
         }),
         headers: {
             'Content-Type': 'application/json',
@@ -264,8 +274,8 @@ async function delete_(id_user){
     }
 }
 
-function redirectToUpdateView(id_user){
-    sessionStorage.setItem("id", id_user);
+function redirectToUpdateView(id){
+    sessionStorage.setItem("id", id);
 
     window.location.href = "../../admin/symptoms/updateSymptoms.html";
 }

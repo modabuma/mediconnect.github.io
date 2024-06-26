@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestión de síntomas</title>
-    <link rel="stylesheet" href="../../../css/header.css">
-    <link rel="stylesheet" href="../../../css/loader.css">
+    <title>Gestión de citas médicas</title>
+    <link rel="stylesheet" href="../../css/header.css">
+    <link rel="stylesheet" href="../../css/loader.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
@@ -13,23 +13,17 @@
         <div class="loader"></div>
     </div>
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #00666F;">
-        <a class="navbar-brand" href="../dashboard.html">Dashboard</a>
+        <a class="navbar-brand" href="./dashboard.html">Dashboard</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="../users/manageUsers.html">Usuarios</a>
+                    <a class="nav-link" href="./update_patient.html">Información</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./manageSymptoms.html" style="color: white;">Síntomas</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../sub_symptoms/manageSubSymptoms.html" style="color: white;">Sub síntomas</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../appointment/manageAppointments.html" style="color: white;">Agendar cita</a>
+                    <a class="nav-link" href="./manageAppointments.html" style="color: white;">Agendar cita</a>
                 </li>
 
                 <li class="nav-item">
@@ -40,35 +34,43 @@
     </nav>
 
     <div class="container welcome-message">
-        <h2 id="title" style="margin-top: 50px">Gestión de síntomas</h2>
+        <h2 id="title" style="margin-top: 50px">Gestión de citas médicas</h2>
     </div>
 
     <div class="container" style="margin-top: 30px">
         <button class="btn btn-secondary" type="button" data-toggle="collapse" data-target="#filterContainer" aria-expanded="false" aria-controls="filterContainer">
             Mostrar/Ocultar Filtros
         </button>
-        <a class="btn btn-success" type="button" href="./createSymptoms.html">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
-                <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"/>
-            </svg>
+        <a class="btn btn-success" type="button" href="./createAppointment.html">
+            Asignar cita
         </a>
         <div class="collapse" id="filterContainer">
             <div class="card card-body">
                 <form id="filter-form">
                     <div class="form-row">
                         <div class="form-group col-md-3">
-                            <label for="filter-code-symptom">Código síntoma</label>
-                            <input type="text" class="form-control" id="filter-code-symptom" placeholder="Introduce el código">
+                            <label for="exampleFormControlSelect1">Doctor</label>
+                            <select class="form-control" id="filter-doctor">
+                                <option value="0">Elige una opción</option>
+                            </select>
                         </div>
-                        <div class="form-group col-md-3">
-                            <label for="filter-desc-symptom">Descripción síntoma</label>
-                            <input type="text" class="form-control" id="filter-desc-symptom" placeholder="Introduce la descripción">
+                        <div class="form-group col-md-2">
+                            <label for="exampleFormControlSelect1">Síntoma</label>
+                            <select class="form-control" id="filter-symptom" onchange="getSubSymptoms()">
+                                <option value="0">Elige una opción</option>
+                            </select>
                         </div>
-                        <div class="form-group col-md-3">
+                        <div class="form-group col-md-2">
+                            <label for="exampleFormControlSelect1">Sub síntoma</label>
+                            <select class="form-control" id="filter-sub-symptom">
+                                <option value="0">Elige una opción</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-2">
                             <label for="filter-initial-date">Fecha inicial</label>
                             <input type="date" class="form-control" id="filter-initial-date">
                         </div>
-                        <div class="form-group col-md-3">
+                        <div class="form-group col-md-2">
                             <label for="filter-final-date">Fecha final</label>
                             <input type="date" class="form-control" id="filter-final-date">
                         </div>
@@ -85,8 +87,10 @@
                 <thead>
                     <tr>
                         <th>Acciones</th>
-                        <th>Código síntoma</th>
-                        <th>Descripción</th>
+                        <th>Doctor</th>
+                        <th>Síntoma</th>
+                        <th>Sub síntoma</th>
+                        <th>Fecha</th>
                     </tr>
                 </thead>
                 <tbody id="records">
@@ -101,8 +105,8 @@
         </nav>
     </div>
 
-    <script src="../../../js/auth/logout.js"></script>
-    <script src="../../../js/admin/symptoms/manageSymptoms.js"></script>
+    <script src="../../js/auth/logout.js"></script>
+    <script src="../../js/patient/manageAppointments.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
