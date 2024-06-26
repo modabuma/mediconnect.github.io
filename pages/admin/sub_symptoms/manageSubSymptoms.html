@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestión de Citas Médicas</title>
+    <title>Gestión de sub síntomas</title>
     <link rel="stylesheet" href="../../../css/header.css">
     <link rel="stylesheet" href="../../../css/loader.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
@@ -29,7 +29,7 @@
                     <a class="nav-link" href="./manageSubSymptoms.html" style="color: white;">Sub síntomas</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" style="color: white;">Agendar cita</a>
+                    <a class="nav-link" href="../appointment/manageAppointments.html" style="color: white;">Agendar cita</a>
                 </li>
 
                 <li class="nav-item">
@@ -40,14 +40,14 @@
     </nav>
 
     <div class="container welcome-message">
-        <h2 id="title" style="margin-top: 50px">Gestión de Sub-Síntomas</h2>
+        <h2 id="title" style="margin-top: 50px">Gestión de sub síntomas</h2>
     </div>
 
     <div class="container" style="margin-top: 30px">
         <button class="btn btn-secondary" type="button" data-toggle="collapse" data-target="#filterContainer" aria-expanded="false" aria-controls="filterContainer">
             Mostrar/Ocultar Filtros
         </button>
-        <a class="btn btn-success" type="button" style="margin-left: 10px;" href="./createSubSymptoms.html">
+        <a class="btn btn-success" type="button" href="./createSubSymptoms.html">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
                 <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"/>
             </svg>
@@ -62,13 +62,21 @@
                                 <option value="0">Elige una opción</option>
                             </select>
                         </div>
-                        <div class="form-group col-md-3">
-                            <label for="filter-code-sub-symptom">Código Sub-Síntoma</label>
-                            <input type="text" class="form-control" id="filter-code-sub-symptom" placeholder="Código Sub-Síntoma">
+                        <div class="form-group col-md-2">
+                            <label for="filter-code-sub-symptom">Código sub síntoma</label>
+                            <input type="text" class="form-control" id="filter-code-sub-symptom" placeholder="Introduce el código">
                         </div>
                         <div class="form-group col-md-3">
-                            <label for="filter-desc-sub-symptom">Descripción Sub-Síntoma</label>
-                            <input type="text" class="form-control" id="filter-desc-sub-symptom" placeholder="Sub-Síntoma">
+                            <label for="filter-desc-sub-symptom">Descripción sub síntoma</label>
+                            <input type="text" class="form-control" id="filter-desc-sub-symptom" placeholder="Introduce la descripción">
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="filter-initial-date">Fecha inicial</label>
+                            <input type="date" class="form-control" id="filter-initial-date">
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="filter-final-date">Fecha final</label>
+                            <input type="date" class="form-control" id="filter-final-date">
                         </div>
                     </div>
                     <button type="button" class="btn btn-primary" onclick="getDataWithFilters()">Buscar</button>
@@ -84,7 +92,7 @@
                     <tr>
                         <th>Acciones</th>
                         <th>Síntoma</th>
-                        <th>Código Sub-Síntoma</th>
+                        <th>Código sub síntoma</th>
                         <th>Descripción</th>
                     </tr>
                 </thead>

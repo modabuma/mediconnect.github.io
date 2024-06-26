@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", async function(){
     let code = document.getElementById("filter-code-symptom");
     let description = document.getElementById("filter-desc-symptom");
-    let id_user = sessionStorage.getItem("id");
+    let id = sessionStorage.getItem("id");
     let loader = document.getElementById("preloader");
 
     const options = {
@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", async function(){
         }
     };
 
-    const response = await fetch("http://127.0.0.1:5000/symptoms/get?id="+id_user, options);
+    const response = await fetch("http://127.0.0.1:5000/symptoms/get?id="+id, options);
 
     loader.style.display = "none";
 
@@ -28,14 +28,14 @@ async function updateSymptom(){
     let loader = document.getElementById("preloader");
     let code = document.getElementById("filter-code-symptom").value;
     let description = document.getElementById("filter-desc-symptom").value;
-    let id_user = sessionStorage.getItem("id");
+    let id = sessionStorage.getItem("id");
 
     loader.style.display = "flex";
 
     const options = {
         method: "PUT",
         body: JSON.stringify({
-            id: parseInt(id_user, 10),
+            id: parseInt(id, 10),
             code: code,
             description: description
         }),

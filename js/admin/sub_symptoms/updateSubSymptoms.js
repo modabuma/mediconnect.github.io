@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", async function(){
     let code = document.getElementById("filter-code-sub-symptom");
     let description = document.getElementById("filter-desc-sub-symptom");
-    let id_user = sessionStorage.getItem("id");
+    let id = sessionStorage.getItem("id");
 
     const options = {
         method: "GET",
@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", async function(){
         }
     };
 
-    const response = await fetch("http://127.0.0.1:5000/sub_symptoms/get?id="+id_user, options);
+    const response = await fetch("http://127.0.0.1:5000/sub_symptoms/get?id="+id, options);
 
     const sub_symptom = await response.json();
     const record = sub_symptom.data.records;
@@ -26,7 +26,7 @@ async function updateSubSymptoms(){
     let code = document.getElementById("filter-code-sub-symptom").value;
     let description = document.getElementById("filter-desc-sub-symptom").value;
     let loader = document.getElementById("preloader");
-    let id_user = sessionStorage.getItem("id");
+    let id = sessionStorage.getItem("id");
 
 
     loader.style.display = "flex";
@@ -36,7 +36,7 @@ async function updateSubSymptoms(){
         body: JSON.stringify({
             code: code,
             description: description,
-            id: parseInt(id_user,10)
+            id: parseInt(id,10)
         }),
         headers: {
             'Content-Type': 'application/json',
