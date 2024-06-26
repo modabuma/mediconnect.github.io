@@ -449,5 +449,5 @@ async function delete_(id_user){
 function redirectToUpdateView(id_user){
     sessionStorage.setItem("id", id_user);
 
-    window.location.href = "../../admin/patient/updateUser.html";
+    window.location.href = "../../admin/users/updateUser.html";
 }

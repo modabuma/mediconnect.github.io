@@ -3,11 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Header Responsivo</title>
-    <link rel="stylesheet" href="../../../css/admin/dashboard.css">
+    <title>Crear usuario</title>
+    <link rel="stylesheet" href="../../../css/header.css">
+    <link rel="stylesheet" href="../../../css/loader.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+    <div id="preloader" style="display: none;">
+        <div class="loader"></div>
+    </div>
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #00666F;">
         <a class="navbar-brand" href="../dashboard.html">Dashboard</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,7 +39,7 @@
     </nav>
 
     <div class="container mt-5">
-        <h2>Actualizar Usuario</h2>
+        <h2>Crear usuario</h2>
         <form>
             <div class="form-group">
                 <label for="filter-names">Nombres</label>
@@ -76,17 +80,35 @@
                 </select>
             </div>
             <div class="form-group">
+                <label for="filter-email">Correo Electrónico</label>
+                <input type="email" class="form-control" id="filter-email" placeholder="Introduce el correo electrónico">
+            </div>
+            <div class="form-group">
+                <label for="filter-password">Contraseña</label>
+                <input type="password" class="form-control" id="filter-password" placeholder="Introduce la contraseña">
+            </div>
+            <div class="form-group">
+                <label for="filter-confirm-password">Confirmar Contraseña</label>
+                <input type="password" class="form-control" id="filter-confirm-password" placeholder="Confirma la contraseña">
+            </div>
+            <div class="form-group">
+                <label for="filter-role">Rol</label>
+                <select class="form-control" id="filter-role">
+                    <option value="0">Elige una opción</option>
+                </select>
+            </div>
+            <div class="form-group">
                 <label for="filter-membership">Afiliación</label>
                 <select class="form-control" id="filter-membership">
                     <option value="0">Elige una opción</option>
                 </select>
             </div>
-            <button type="button" class="btn btn-primary" style="margin-bottom: 30px;" onclick="updateUser()">Actualizar Usuario</button>
+            <button type="button" class="btn btn-primary" style="margin-bottom: 30px;" onclick="createUser()">Crear usuario</button>
         </form>
     </div>
 
     <script src="../../../js/auth/logout.js"></script>
-    <script src="../../../js/admin/updateUser.js"></script>
+    <script src="../../../js/admin/users/createUser.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>

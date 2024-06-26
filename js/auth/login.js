@@ -18,9 +18,12 @@ document.addEventListener("DOMContentLoaded", async function(){
 });
 
 async function authenticate() {
+    let loader = document.getElementById("preloader");
     let email = document.getElementById("email").value;
     let password = document.getElementById("password").value;
     
+    loader.style.display = "flex";
+
     if (email.trim() == "" || password.trim() == ""){
         Swal.fire({
             title: "¡Atención!",
@@ -29,6 +32,8 @@ async function authenticate() {
             confirmButtonColor: "#3085d6",
             confirmButtonText: 'Vale'
         });
+
+        loader.style.display = "none";
     }
     else{
         const options = {
@@ -45,6 +50,8 @@ async function authenticate() {
         const response = await fetch("http://127.0.0.1:5000/auth/login", options);
         
         const resp = await response.json();
+
+        loader.style.display = "none";
 
         if (response.status != 200){
             Swal.fire({

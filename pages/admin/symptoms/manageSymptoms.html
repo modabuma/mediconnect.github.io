@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestión de Citas Médicas</title>
-    <link rel="stylesheet" href="../../../css/admin/dashboard.css">
+    <title>Gestión de síntomas</title>
+    <link rel="stylesheet" href="../../../css/header.css">
+    <link rel="stylesheet" href="../../../css/loader.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <!-- <div id="preloader">
+    <div id="preloader">
         <div class="loader"></div>
-    </div>  -->
+    </div>
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #00666F;">
         <a class="navbar-brand" href="../dashboard.html">Dashboard</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -19,7 +20,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="../patient/manageUsers.html">Usuarios</a>
+                    <a class="nav-link" href="../users/manageUsers.html">Usuarios</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="./manageSymptoms.html" style="color: white;">Síntomas</a>
@@ -47,8 +48,8 @@
             Mostrar/Ocultar Filtros
         </button>
         <a class="btn btn-success" type="button" style="margin-left: 10px;" href="./createSymptoms.html">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-h-circle" viewBox="0 0 16 16">
-                <path d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-5-3.998V12H9.67V8.455H6.33V12H5V4.002h1.33v3.322h3.34V4.002z"/>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"/>
             </svg>
         </a>
         <div class="collapse" id="filterContainer">
@@ -57,11 +58,11 @@
                     <div class="form-row">
                         <div class="form-group col-md-2">
                             <label for="filter-code-symptom">Código Síntoma</label>
-                            <input type="number" class="form-control" id="filter-code-symptom" placeholder="Código Síntoma">
+                            <input type="text" class="form-control" id="filter-code-symptom" placeholder="Código Síntoma">
                         </div>
                         <div class="form-group col-md-2">
                             <label for="filter-desc-symptom">Descripción Síntoma</label>
-                            <input type="text" class="form-control" id="filter-desc-symptom" placeholder="Síntoma">
+                            <input type="text" class="form-control" id="filter-desc-symptom" placeholder="Descripción">
                         </div>
                     </div>
                     <button type="button" class="btn btn-primary" onclick="getDataWithFilters()">Buscar</button>
@@ -75,6 +76,7 @@
             <table class="table table-striped">
                 <thead>
                     <tr>
+                        <th>Acciones</th>
                         <th>Código Síntoma</th>
                         <th>Descripción</th>
                     </tr>
@@ -92,7 +94,7 @@
     </div>
 
     <script src="../../../js/auth/logout.js"></script>
-    <script src="../../../js/admin/manageSymptoms.js"></script>
+    <script src="../../../js/admin/symptoms/manageSymptoms.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>

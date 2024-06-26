@@ -25,16 +25,15 @@ body {
     color: white;
 }
 .boton_atras {
-    background: #f1f7fe;
-    padding: 0.5em;
+    background: #FFFFFF;
+    padding: 15px;
     display: flex;
     flex-direction: column;
     border-radius: 10px;
-    box-shadow: 0 0 1em #e6e9f9;
+    box-shadow: 2px 5px 1px #e6e9f9;
     gap: 1em;
     vertical-align: top;
-    display: inline-block;
     position: absolute;
     top:10px;
     left:18px;
-  }
+}
