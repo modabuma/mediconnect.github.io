@@ -9,6 +9,5 @@ document.addEventListener("DOMContentLoaded", function(){
     const [headerB64, payloadB64, signature] = access_token.split('.');
     const payload = JSON.parse(atob(payloadB64));
 
-    console.log(payload.sub);
     h2.textContent = "Le damos la bienvenida, "+payload.sub.names+" "+payload.sub.lastnames;
 });

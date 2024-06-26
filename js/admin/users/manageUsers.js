@@ -265,7 +265,7 @@ async function getDataWithFilters(){
     let address = document.getElementById("filter-address").value;
     let phone = document.getElementById("filter-phone").value;
     let initial_date = document.getElementById("filter-initial-date").value;
-    let final_date = document.getElementById("filter-final-date");
+    let final_date = document.getElementById("filter-final-date").value;
     const records = document.getElementById("records");
     const pages = document.getElementById("pages");
     let html = "";
